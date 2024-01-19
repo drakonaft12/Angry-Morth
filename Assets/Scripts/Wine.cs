@@ -8,7 +8,7 @@ using System.Threading;
 
 public class Wine : MonoBehaviour // Класс, определяющий условия победы и её результат
 {
-    [SerializeField] Vorcs vorsRed, vorsGreen, vorsYelou;
+    [SerializeField] VorcsBase vorsRed, vorsGreen, vorsYelou;
     [SerializeField] TextMeshProUGUI textMeshPro;
     [SerializeField] MenuBase Menu; // Поддерживает принцип подстановки Лисков, так как в MenuBase - абстрактный класс и сюда передаётся его потомок Menu
     bool Work = true, ret = false;

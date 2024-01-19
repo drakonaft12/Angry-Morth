@@ -525,7 +525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56246f39b81367e4e962b1f9e487eec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dvij: {x: 0, y: 0}
 --- !u!114 &992512206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,9 +731,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 77981241}
   objects:
-  - {fileID: 2136369420}
-  - {fileID: 992512205}
-  - {fileID: 2050697542}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   velocity: 1
 --- !u!114 &1805742028
 MonoBehaviour:
@@ -799,7 +798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56246f39b81367e4e962b1f9e487eec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dvij: {x: 0, y: 0}
 --- !u!114 &2050697543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,7 +887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56246f39b81367e4e962b1f9e487eec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dvij: {x: 0, y: 0}
 --- !u!114 &2136369421
 MonoBehaviour:
   m_ObjectHideFlags: 0
