@@ -51,7 +51,7 @@ public class Wine : MonoBehaviour //  ласс, определ€ющий услови€ победы и еЄ рез
     {
         Thread.Sleep(5000);
         Menu.StartScene("Menu");
-        yield return 1;
+        yield return null;
     }
 }
 
