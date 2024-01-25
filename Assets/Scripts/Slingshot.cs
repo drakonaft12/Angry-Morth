@@ -1,5 +1,6 @@
 using Birds;
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 
@@ -14,6 +15,7 @@ namespace Slingshots
         private VorcsRogatka vorcsPoint = null!;
         [SerializeField] private BirdSpawn birdSource = null!;
 
+        [SerializeField] MenuBase Menu;
 
 
         private IEnumerator Start()
@@ -25,7 +27,8 @@ namespace Slingshots
                 yield return WaitShot(borb);
             }
 
-            print($"Game Over");
+            yield return new WaitForSecondsRealtime(5);
+            Menu.StartScene("Menu");
                 
         }
 

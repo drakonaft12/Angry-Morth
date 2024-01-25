@@ -34,7 +34,6 @@ public class VorcsRogatka : VorcsBase // Много интерфейсов, и у всех лишь один м
     protected override void GoToUp()
     {
         var delta = beginPoint - transform.position;
-        Debug.Log(delta.magnitude / length);
         transform.position = beginPoint;
 
         onRelease?.Invoke(delta.normalized * (delta.magnitude / length));

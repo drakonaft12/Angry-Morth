@@ -49,9 +49,9 @@ public class Wine : MonoBehaviour //  ласс, определ€ющий услови€ победы и еЄ рез
 
     private IEnumerator ResetMenu()
     {
-        Thread.Sleep(5000);
+        yield return new WaitForSecondsRealtime(3);
         Menu.StartScene("Menu");
-        yield return null;
+        
     }
 }
 
