@@ -10,7 +10,7 @@ public class Balka : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        hp *= rigidbody.mass / rigidbody.gravityScale;
+        hp *= rigidbody.mass / rigidbody.gravityScale * 2;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
