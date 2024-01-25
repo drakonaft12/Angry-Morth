@@ -5,11 +5,9 @@ public class Balka : MonoBehaviour
 {
     [SerializeField] float hp = 5;
 
-    private Rigidbody2D rigidbody;
-
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        var rigidbody = GetComponent<Rigidbody2D>();
         hp *= rigidbody.mass / rigidbody.gravityScale * 2;
     }
 

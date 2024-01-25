@@ -23,7 +23,7 @@ public class VorcsRogatka : VorcsBase // Много интерфейсов, и у всех лишь один м
         {
             if (clickRet)
             {
-                var direct = (Input.mousePosition - beginPoint).normalized * length;
+                var direct = (Input.mousePosition - beginPoint - (Vector3)evPress).normalized * length;
                 transform.position = beginPoint + direct;
             }
         }

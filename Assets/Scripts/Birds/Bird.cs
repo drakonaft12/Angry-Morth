@@ -19,7 +19,7 @@ namespace Birds
         public void Launch(Vector2 direction)
         {
             rigidbody.isKinematic = false;
-            rigidbody.AddForce(direction*rigidbody.mass * rigidbody.gravityScale*2, ForceMode2D.Impulse);
+            rigidbody.AddForce(direction * rigidbody.mass * rigidbody.gravityScale * 2, ForceMode2D.Impulse);
         }
     }
 }
