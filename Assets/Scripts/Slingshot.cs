@@ -4,8 +4,8 @@ using System.Threading;
 using UnityEngine;
 
 
-namespace Slingshots
-{
+
+
     public class Slingshot : MonoBehaviour
     {
         [SerializeField] private BirdTransfer birdTransfer = new();
@@ -62,4 +62,3 @@ namespace Slingshots
             vorcsPoint.enabled = true;
         }
     }
-}
