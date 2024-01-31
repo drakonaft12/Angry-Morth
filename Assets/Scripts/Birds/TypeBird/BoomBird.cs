@@ -7,15 +7,10 @@ using UnityEngine.UI;
 public class BoomBird : TypeBirdBase
 {
 
-    GameObject[] booms;
 
     public BoomBird()
     {
-        booms = new GameObject[20];
-        for (int i = 0; i < 20; i++)
-        {
-            booms[i] = BoomCreate().Result;
-        }
+        
     }
     protected override void SetupBird(Bird _bird)
     {
@@ -37,17 +32,10 @@ public class BoomBird : TypeBirdBase
         await Task.Delay(3000);
         await _bird.transform.DOScale(1.2f, 0.2f).SetLoops(2,LoopType.Yoyo).AsyncWaitForCompletion();
         _bird.Rigidbody.isKinematic = true;
-        for (int i = 0; i < booms.Length; i++)
-        {
-            booms[i].transform.position = _bird.transform.position;
-            booms[i].SetActive(true);
-        }
+        CreateBoom2D.boom2D.Boom(20000000, 0, _bird.transform.position);
         await Task.Delay(200);
         _bird.Rigidbody.isKinematic = false;
-        for (int i = 0; i < booms.Length; i++)
-        {
-            booms[i].SetActive(false);
-        }
+        
     }
 
     private async Task<GameObject> BoomCreate()
