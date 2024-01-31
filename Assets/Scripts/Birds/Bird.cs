@@ -7,38 +7,38 @@ namespace Birds
     [RequireComponent(typeof(Rigidbody2D))]
     public class Bird : MonoBehaviour
     {
-        private new Rigidbody2D rigidbody = null!;
-        [SerializeField] private float velosity = 2;
-        private bool isCollision = false;
+        private new Rigidbody2D _rigidbody = null!;
+        [SerializeField] private float _velosity = 2;
+        private bool _isCollision = false;
         public UnityEvent<Bird> WorkInput; 
-        public Rigidbody2D Rigidbody { get => rigidbody; }
-        public float Velosity { get => velosity; set => velosity = value; }
-        public bool IsCollision { get => isCollision; set => isCollision = value; }
+        public Rigidbody2D Rigidbody { get => _rigidbody; }
+        public float Velosity { get => _velosity; set => _velosity = value; }
+        public bool IsCollision { get => _isCollision; set => _isCollision = value; }
 
         private void OnCollisionEnter2D(Collision2D _collision)
         {
-            if (!rigidbody.isKinematic)
+            if (!_rigidbody.isKinematic)
             {
-                isCollision = true;
+                _isCollision = true;
             }
         }
 
         private void Awake()
         {
-            rigidbody = GetComponent<Rigidbody2D>()!;
-            rigidbody.isKinematic = true;
+            _rigidbody = GetComponent<Rigidbody2D>()!;
+            _rigidbody.isKinematic = true;
         }
 
         private void Update()
         {
-            if(!rigidbody.isKinematic)
+            if(!_rigidbody.isKinematic)
             WorkInput?.Invoke(this);
         }
 
         public void Launch(Vector2 direction)
         {
-            rigidbody.isKinematic = false;
-            rigidbody.AddForce(direction * rigidbody.mass * rigidbody.gravityScale * velosity, ForceMode2D.Impulse);
+            _rigidbody.isKinematic = false;
+            _rigidbody.AddForce(direction * _rigidbody.mass * _rigidbody.gravityScale * _velosity, ForceMode2D.Impulse);
         }
     }
 }

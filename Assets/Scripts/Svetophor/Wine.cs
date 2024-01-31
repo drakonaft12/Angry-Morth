@@ -1,17 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
-using UnityEditor.UI;
 using TMPro;
-using System;
-using System.Threading;
+using System.Threading.Tasks;
 
 public class Wine : MonoBehaviour //  ласс, определ€ющий услови€ победы и еЄ результат
 {
     [SerializeField] VorcsBase vorsRed, vorsGreen, vorsYelou;
     [SerializeField] TextMeshProUGUI textMeshPro;
     [SerializeField] MenuBase Menu; // ѕоддерживает принцип подстановки Ћисков, так как в MenuBase - абстрактный класс и сюда передаЄтс€ его потомок Menu
-    bool Work = true, ret = false;
+    bool Work = true;
     float tochnost = 10f;
 
 
@@ -26,10 +23,6 @@ public class Wine : MonoBehaviour //  ласс, определ€ющий услови€ победы и еЄ рез
 
     private void Update()
     {
-        if (ret)
-        {
-            StartCoroutine(ResetMenu());
-        }
         if (Work)
         {
             var rasnRedX = Mathf.Abs(vorsYelou.transform.position.x - vorsRed.transform.position.x);
@@ -42,16 +35,17 @@ public class Wine : MonoBehaviour //  ласс, определ€ющий услови€ победы и еЄ рез
             if (rasnRedX < tochnost && rasnGreenX < tochnost && rasnRedY && rasnGreenY && clickoff)
             {
                 textMeshPro.text = "“ы победил, поздравл€ю!!!";
-                ret = true;
+                ResetMenu();
             }
         }
     }
 
-    private IEnumerator ResetMenu()
+
+    private async void ResetMenu()
     {
-        yield return new WaitForSecondsRealtime(3);
+        await Task.Delay(3000);
         Menu.StartScene("Menu");
-        
     }
+    
 }
 

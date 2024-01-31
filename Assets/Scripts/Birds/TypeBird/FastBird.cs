@@ -1,6 +1,7 @@
 using Birds;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class FastBird : TypeBirdBase
 
     protected override void SetupBird(Bird _bird)
     {
-        
+
     }
 
     protected override void WorkBird(Bird _bird)

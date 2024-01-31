@@ -10,7 +10,7 @@ namespace Birds
 
         private void Awake()
         {
-            type = new TypeBirdBase[] { new StandartBird(), new FastBird(), new ThreeBird(this), new GigantBird() };
+            type = new TypeBirdBase[] { new StandartBird(), new FastBird(), new ThreeBird(this), new GigantBird(), new BoomBird()};
         }
 
         public Bird NextBird()
