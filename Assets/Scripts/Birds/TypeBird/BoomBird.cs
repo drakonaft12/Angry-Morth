@@ -32,23 +32,9 @@ public class BoomBird : TypeBirdBase
         await Task.Delay(3000);
         await _bird.transform.DOScale(1.2f, 0.2f).SetLoops(2,LoopType.Yoyo).AsyncWaitForCompletion();
         _bird.Rigidbody.isKinematic = true;
-        CreateBoom2D.boom2D.Boom(20000000, 0, _bird.transform.position);
-        await Task.Delay(200);
+        CreateBoom2D.boom2D.Boom(50000000, 0.4f, _bird.transform.position,200,150);
+        await Task.Delay(150);
         _bird.Rigidbody.isKinematic = false;
         
-    }
-
-    private async Task<GameObject> BoomCreate()
-    {
-        var item = new GameObject("BoomEffect");
-        var collider = item.AddComponent<CircleCollider2D>();
-        var forsePoint = item.AddComponent<PointEffector2D>();
-        collider.radius = 225;
-        collider.isTrigger = true;
-        collider.usedByEffector = true;
-        forsePoint.forceMagnitude = 10000000;
-        forsePoint.forceVariation = 10000000;
-        item.SetActive(false);
-        return item;
     }
 }

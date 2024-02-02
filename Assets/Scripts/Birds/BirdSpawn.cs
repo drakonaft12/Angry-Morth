@@ -11,7 +11,7 @@ namespace Birds
         private void Awake()
         {
             new CreateBoom2D();
-            type = new TypeBirdBase[] { new BoomBird()};
+            type = new TypeBirdBase[] { new BoomBird(), new FastBird(), new StandartBird(), new GigantBird(), new ThreeBird(this)};
             
         }
 

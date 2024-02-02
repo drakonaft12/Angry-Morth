@@ -23,8 +23,10 @@ public class ThreeBird : TypeBirdBase
     {
         if (Input.GetMouseButtonDown(0) && !_bird.IsCollision)
         {
-            birdSpawn.NextBird(_bird, Vector3.up*15);
-            birdSpawn.NextBird(_bird, Vector3.down*15);
+            var vector = _bird.Rigidbody.velocity.normalized;
+            var perpendicular = new Vector2(vector.y, -vector.x);
+            birdSpawn.NextBird(_bird, perpendicular * 15);
+            birdSpawn.NextBird(_bird, -perpendicular * 15);
             _bird.IsCollision = true;
         }
     }
