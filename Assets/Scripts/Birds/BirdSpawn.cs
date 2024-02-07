@@ -15,6 +15,15 @@ namespace Birds
             
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                if (Time.timeScale == 1) Time.timeScale = 0.2f;
+                else Time.timeScale = 1;
+            }
+        }
+
         public Bird NextBird()
         {
             var bird = Instantiate(birdPrefab, transform.position, Quaternion.identity, transform);

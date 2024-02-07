@@ -29,11 +29,11 @@ public class BoomBird : TypeBirdBase
 
     private async void Boom(Bird _bird)
     {
-        await Task.Delay(3000);
+        await Task.Delay((int)(3000 * Time.timeScale));
         await _bird.transform.DOScale(1.2f, 0.2f).SetLoops(2,LoopType.Yoyo).AsyncWaitForCompletion();
         _bird.Rigidbody.isKinematic = true;
-        CreateBoom2D.boom2D.Boom(50000000, 0.4f, _bird.transform.position,200,150);
-        await Task.Delay(150);
+        CreateBoom2D.boom2D.Boom(50000000, 0.4f, _bird.transform.position,200, (int)(150 * Time.timeScale));
+        await Task.Delay((int)(150 * Time.timeScale));
         _bird.Rigidbody.isKinematic = false;
         
     }

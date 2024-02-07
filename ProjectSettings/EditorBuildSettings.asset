@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rogatka.unity
     guid: 0a7d9ad0f41732546a18a6e57f45d2dd
+  - enabled: 1
+    path: Assets/Scenes/VertkiShar.unity
+    guid: 6dac3eed8875f034ba9e4c8bb1d5366d
   m_configObjects: {}
